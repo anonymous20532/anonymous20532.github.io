@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="character animation, humanoid, human-object interaction, reinforcement learning, manipulation, basketball">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Whole-Body Loco-Manipulation through Compositional Data Synthesis</title>
+  <link rel="icon" href="static/images/hand_icon.png" type="image/svg+xml">
+
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="https://kit.fontawesome.com/d383128d10.js" crossorigin="anonymous"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    .publication-title-with-icon {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 14px;
+      margin: 0 auto;
+    }
+
+    .publication-title-icon {
+      height: 120px;
+      margin-bottom: 0;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .publication-title-text {
+      display: inline-block;
+      line-height: 1.08;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .intro-teaser-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .intro-teaser-hover {
+      position: relative;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #ffffff;
+    }
+
+    .intro-teaser-hover video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .intro-teaser-hover.is-hovered video,
+    .intro-teaser-hover:hover video {
+      opacity: 1;
+    }
+
+    .intro-teaser-hover.is-hovered .intro-teaser-image,
+    .intro-teaser-hover:hover .intro-teaser-image {
+      opacity: 0;
+    }
+
+    .intro-teaser-hover .intro-teaser-image {
+      transition: opacity 0.25s ease;
+    }
+
+    .paper-abstract .title.is-3 {
+      margin-top: 0.4rem;
+      color: #25344f;
+      letter-spacing: 0.01em;
+    }
+
+    /* Abstract: typographic polish without adding any box/background. */
+    .paper-abstract .content {
+      margin: 0.85rem auto 0;
+      max-width: 82ch;
+      text-align: left;
+      color: #2c364a;
+      font-family: "Castoro", "Noto Sans", serif;
+      font-size: 1.06rem;
+      line-height: 1.82;
+      letter-spacing: 0;
+      text-wrap: pretty;
+    }
+
+    .paper-abstract .content p {
+      margin: 0 0 1.05rem;
+    }
+
+    .paper-abstract .content p:first-child {
+      font-size: 1.08em;
+      line-height: 1.78;
+    }
+
+    .paper-abstract .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .paper-abstract .content a {
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.16em;
+    }
+
+    /* Abstract keyword emphasis: lightweight colored underline (no boxes, no backgrounds). */
+    .paper-abstract .abs-key,
+    .paper-abstract .abs-key-ref,
+    .paper-abstract .abs-metric {
+      font-weight: 800;
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.16em;
+      text-underline-offset: 0.18em;
+      text-decoration-skip-ink: none;
+    }
+
+    .paper-abstract .abs-key {
+      text-decoration-color: rgba(78, 130, 215, 0.45);
+    }
+
+    .paper-abstract .abs-key-ref {
+      text-decoration-color: rgba(74, 208, 56, 0.45);
+    }
+
+    .paper-abstract .abs-metric {
+      text-decoration-color: rgba(245, 179, 100, 0.60);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media screen and (max-width: 768px) {
+      .publication-title-with-icon {
+        display: block;
+      }
+
+      .publication-title-icon {
+        height: 72px;
+        margin: 0 auto 8px;
+      }
+
+      .publication-title-text {
+        white-space: normal;
+      }
+
+      .intro-teaser-image {
+        border-radius: 8px;
+      }
+
+      .intro-teaser-hover {
+        border-radius: 8px;
+      }
+
+      .paper-abstract .content {
+        font-size: 0.96rem;
+        line-height: 1.68;
+      }
+
+      .paper-abstract .abs-key,
+      .paper-abstract .abs-key-ref,
+      .paper-abstract .abs-metric {
+        text-decoration-thickness: 0.14em;
+        text-underline-offset: 0.16em;
+      }
+
+    }
+
+    .video-caption {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 14px;
+      padding: 2px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      color: #4b5a73;
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      transition: none;
+    }
+
+    .video-caption::before {
+      content: none;
+    }
+
+    .publication-banner.video:hover .video-caption {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .video-caption-tag {
+      font-weight: 700;
+      color: #0c3d86;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      background: #e6efff;
+      border: 1px solid #bfd1f3;
+      border-radius: 9px;
+      padding: 2px 8px;
+      line-height: 1.05;
+      font-size: 1.18em;
+    }
+
+    .video-caption-text {
+      font-weight: 500;
+      color: #4d5b73;
+      font-size: 1.4em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .video-caption {
+        font-size: 1.2rem;
+        padding: 0;
+        gap: 6px;
+      }
+
+      .video-caption-text {
+        font-size: 1.4em;
+      }
+
+      .video-caption-tag {
+        font-size: 1.12em;
+      }
+    }
+
+    .overview-interactive {
+      position: relative;
+      width: 100%;
+      border: 1px solid #d7dce6;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .overview-interactive img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overview-hotspot {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      z-index: 4;
+      cursor: pointer;
+    }
+
+    .overview-hotspot-left {
+      left: 0;
+    }
+
+    .overview-hotspot-right {
+      right: 0;
+    }
+
+    .overview-highlight {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: rgba(255, 255, 255, 0);
+      transition: background 0.22s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .overview-highlight-left {
+      left: 0;
+    }
+
+    .overview-highlight-right {
+      right: 0;
+    }
+
+    .overview-tooltip {
+      position: absolute;
+      bottom: 20px;
+      max-width: 44%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #cfd8ea;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
+      color: #1f2937;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .overview-tooltip strong {
+      font-weight: 800;
+    }
+
+    .overview-tooltip-left {
+      left: 16px;
+    }
+
+    .overview-tooltip-right {
+      right: 16px;
+    }
+
+    .overview-interactive.active-left .overview-highlight-left {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .overview-interactive.active-right .overview-highlight-right {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .overview-interactive.active-left .overview-tooltip-left,
+    .overview-interactive.active-right .overview-tooltip-right {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .overview-interactive-hint {
+      position: relative;
+      margin: 14px auto 30px;
+      width: min(860px, 96%);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 11px 14px 10px;
+      border: 1px solid #cbd8ed;
+      border-left: 4px solid #3f6fb8;
+      border-radius: 8px;
+      background: #f8fbff;
+      box-shadow: 0 4px 12px rgba(24, 39, 75, 0.08);
+      color: #4b5a73;
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .overview-interactive-hint::before {
+      content: "INTERACTIVE";
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      padding: 2px 7px;
+      border: 1px solid #b8c8e2;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #2f5ca1;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+    }
+
+    .overview-interactive-hint .hint-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      color: #2f5ca1;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+      text-transform: uppercase;
+      border: 0;
+      border-bottom: 1px solid #93add7;
+      background: transparent;
+      padding: 1px 2px 2px;
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+    }
+
+    .overview-interactive-hint .hint-text {
+      color: #4d5b73;
+      font-weight: 500;
+      white-space: normal;
+      padding: 0 3px;
+      text-align: center;
+    }
+
+    .teaser-hover-hint {
+      position: relative;
+      margin: 0 auto 18px;
+      width: min(860px, 96%);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 11px 14px 10px;
+      border: 1px solid #cbd8ed;
+      border-left: 4px solid #3f6fb8;
+      border-radius: 8px;
+      background: #f8fbff;
+      box-shadow: 0 4px 12px rgba(24, 39, 75, 0.08);
+      color: #4b5a73;
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .teaser-hover-hint::before {
+      content: "TEASER";
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      padding: 2px 7px;
+      border: 1px solid #b8c8e2;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #2f5ca1;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+    }
+
+    .teaser-hover-hint .hint-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      color: #2f5ca1;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+      text-transform: uppercase;
+      border: 0;
+      border-bottom: 1px solid #93add7;
+      background: transparent;
+      padding: 1px 2px 2px;
+      font-family: "Google Sans", "Noto Sans", sans-serif;
+    }
+
+    .teaser-hover-hint .hint-text {
+      color: #4d5b73;
+      font-weight: 500;
+      white-space: normal;
+      padding: 0 3px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .overview-tooltip {
+        max-width: 86%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 8px);
+      }
+
+      .overview-tooltip-right {
+        left: 50%;
+        right: auto;
+      }
+
+      .overview-interactive.active-left .overview-tooltip-left,
+      .overview-interactive.active-right .overview-tooltip-right {
+        transform: translate(-50%, 0);
+      }
+
+      .overview-interactive-hint {
+        width: 100%;
+        max-width: 100%;
+        margin: 12px auto 22px;
+        gap: 6px;
+        font-size: 0.82rem;
+        padding: 10px 10px 9px;
+      }
+
+      .teaser-hover-hint {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 14px;
+        gap: 6px;
+        font-size: 0.82rem;
+        padding: 10px 10px 9px;
+      }
+
+      .overview-interactive-hint .hint-key {
+        min-width: 40px;
+        font-size: 0.68rem;
+      }
+
+      .teaser-hover-hint .hint-key {
+        min-width: 46px;
+        font-size: 0.68rem;
+      }
+
+      .overview-interactive-hint .hint-text {
+        white-space: normal;
+        padding: 0;
+      }
+
+      .teaser-hover-hint .hint-text {
+        white-space: normal;
+        padding: 0;
+      }
+    }
+
+		    #part2-manipsynth .title.is-2 {
+		      margin-bottom: 0.35rem;
+		      font-weight: 850;
+		      letter-spacing: -0.02em;
+	      color: #1d2a3b;
+	    }
+
+	    #part2-carousel {
+	      margin-top: 0.65rem;
+	    }
+
+	    #part2-carousel .publication-banner.video {
+	      display: flex;
+	      flex-direction: column;
+	      align-items: center;
+	      gap: 12px;
+	    }
+
+		    /* Part2 caption: tighter + more "showcase" feel. */
+		    #part2-carousel .video-caption {
+		      margin: 0 auto 2px;
+		      font-size: 1.06rem;
+		      flex-wrap: wrap;
+		      row-gap: 8px;
+		    }
+
+	    #part2-carousel .video-caption-tag {
+	      /* Base tag styling; color is set by data-kind below. */
+	      display: inline-flex;
+	      align-items: center;
+	      height: 28px;
+	      padding: 0 12px;
+	      border-radius: 999px;
+	      font-weight: 850;
+	      letter-spacing: 0.02em;
+	      border: 0;
+	      color: #ffffff;
+	      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
+	      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
+	    }
+
+	    #part2-carousel .video-caption-tag[data-kind="Handover"] {
+	      background: linear-gradient(180deg, #2b6cff 0%, #1f5bd6 100%);
+	      box-shadow: 0 14px 28px rgba(31, 91, 214, 0.22);
+	    }
+
+	    #part2-carousel .video-caption-tag[data-kind="Pick"],
+		    #part2-carousel .video-caption-tag[data-kind="Pick-Place"] {
+		      background: linear-gradient(180deg, #ffb55e 0%, #e07a00 100%);
+		      box-shadow: 0 14px 28px rgba(224, 122, 0, 0.24);
+		    }
+
+		    /* Hand mode pill: Bimanual vs Single hand. */
+		    #part2-carousel .video-caption-mode {
+		      display: inline-flex;
+		      align-items: center;
+		      height: 28px;
+		      padding: 0 12px;
+		      border-radius: 999px;
+		      font-weight: 850;
+		      letter-spacing: 0.01em;
+		      border: 0;
+		      color: #ffffff;
+		      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
+		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
+		    }
+
+		    #part2-carousel .video-caption-mode[data-mode="Bimanual"] {
+		      background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+		      box-shadow: 0 14px 28px rgba(5, 150, 105, 0.22);
+		    }
+
+		    #part2-carousel .video-caption-mode[data-mode="Single"] {
+		      background: linear-gradient(180deg, #64748b 0%, #334155 100%);
+		      box-shadow: 0 14px 28px rgba(51, 65, 85, 0.22);
+		    }
+
+		    /* Object size + object emoji pills. */
+		    #part2-carousel .video-caption-size,
+		    #part2-carousel .video-caption-obj {
+		      display: inline-flex;
+		      align-items: center;
+		      height: 28px;
+		      padding: 0 12px;
+		      border-radius: 999px;
+		      font-weight: 850;
+		      letter-spacing: 0.01em;
+		      border: 0;
+		      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+		    }
+
+		    #part2-carousel .video-caption-size {
+		      color: #ffffff;
+		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+		      gap: 8px;
+		    }
+
+		    #part2-carousel .video-caption-size i {
+		      color: rgba(255, 255, 255, 0.92);
+		      font-size: 0.95em;
+		      line-height: 1;
+		    }
+
+		    #part2-carousel .video-caption-size[data-size="Small"] {
+		      background: linear-gradient(180deg, #22c1ff 0%, #1877ff 100%);
+		      box-shadow: 0 14px 28px rgba(24, 119, 255, 0.22);
+		    }
+
+		    #part2-carousel .video-caption-size[data-size="Large"] {
+		      background: linear-gradient(180deg, #a855f7 0%, #7c3aed 100%);
+		      box-shadow: 0 14px 28px rgba(124, 58, 237, 0.24);
+		    }
+
+		    #part2-carousel .video-caption-text {
+		      color: #3a465e;
+		      font-weight: 550;
+		      font-size: 1.22em;
+		      letter-spacing: 0.005em;
+		    }
+
+	    #part2-carousel .publication-banner.video video {
+	      width: min(1200px, 96%);
+	      height: 460px;
+	      object-fit: contain;
+	      border: 1px solid rgba(15, 23, 42, 0.14);
+	      border-radius: 18px;
+	      background: #ffffff;
+	      box-shadow:
+	        0 18px 48px rgba(15, 23, 42, 0.14),
+	        0 2px 0 rgba(255, 255, 255, 0.8) inset;
+	      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+	    }
+
+	    #part2-carousel .publication-banner.video:hover video {
+	      transform: translateY(-2px);
+	      border-color: rgba(15, 23, 42, 0.22);
+	      box-shadow:
+	        0 22px 60px rgba(15, 23, 42, 0.18),
+	        0 2px 0 rgba(255, 255, 255, 0.84) inset;
+	    }
+
+	    /* Carousel arrows + dots (bulma-carousel uses slider-* classes). */
+	    #part2-carousel .slider-navigation-next,
+	    #part2-carousel .slider-navigation-previous {
+	      width: 46px;
+	      height: 46px;
+	      background: rgba(255, 255, 255, 0.78);
+	      border: 1px solid rgba(15, 23, 42, 0.12);
+	      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+	      backdrop-filter: blur(10px);
+	    }
+
+	    #part2-carousel .slider-navigation-next:hover,
+	    #part2-carousel .slider-navigation-previous:hover {
+	      transform: scale(1.12);
+	      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+	    }
+
+	    #part2-carousel .slider-pagination {
+	      bottom: 10px;
+	    }
+
+	    #part2-carousel .slider-pagination .slider-page {
+	      width: 9px;
+	      height: 9px;
+	      background: rgba(255, 255, 255, 0.75);
+	      border: 1px solid rgba(15, 23, 42, 0.12);
+	      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+	    }
+
+	    #part2-carousel .slider-pagination .slider-page.is-active,
+	    #part2-carousel .slider-pagination .slider-page:hover {
+	      background: linear-gradient(180deg, #6fa8f9 0%, #4e82d7 100%);
+	      border-color: rgba(78, 130, 215, 0.35);
+	    }
+
+		    @media screen and (max-width: 768px) {
+		      #part2-carousel .publication-banner.video video {
+		        width: 100%;
+		        height: 260px;
+		      }
+		      #part2-carousel .video-caption {
+		        font-size: 1.02rem;
+		      }
+		    }
+
+		    /* --------------------------- */
+		    /* Part3: Side-by-Side Videos  */
+		    /* --------------------------- */
+		    #part3-manipsynth {
+		      background: #f3f4f6;
+		    }
+
+		    #part3-manipsynth .hero-body {
+		      padding-top: 2.4rem;
+		      padding-bottom: 2.4rem;
+		    }
+
+		    #part3-manipsynth .title.is-2 {
+		      margin-bottom: 0.35rem;
+		      font-weight: 850;
+		      letter-spacing: -0.02em;
+		      color: #1d2a3b;
+		    }
+
+		    #part3-carousel {
+		      margin-top: 0.75rem;
+		    }
+
+		    #part3-carousel .publication-banner.video {
+		      display: flex;
+		      flex-direction: column;
+		      align-items: center;
+		      gap: 12px;
+		    }
+
+		    #part3-carousel .video-caption {
+		      margin: 0 auto 2px;
+		      font-size: 1.04rem;
+		      flex-wrap: wrap;
+		      row-gap: 8px;
+		    }
+
+		    #part3-carousel .video-caption-text {
+		      font-size: 1.18em;
+		      font-weight: 800;
+		      color: #1f2d43;
+		      letter-spacing: 0.01em;
+		    }
+
+		    #part3-carousel .video-caption-tag {
+		      display: inline-flex;
+		      align-items: center;
+		      height: 28px;
+		      padding: 0 12px;
+		      border-radius: 999px;
+		      border: 0;
+		      font-size: 0.92em;
+		      font-weight: 800;
+		      color: #ffffff;
+		      letter-spacing: 0.01em;
+		      background: linear-gradient(180deg, #ffb55e 0%, #e07a00 100%);
+		      box-shadow: 0 12px 24px rgba(224, 122, 0, 0.24);
+		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+		    }
+
+		    #part3-carousel .part3-duo {
+		      width: min(1200px, 96%);
+		      display: grid;
+		      grid-template-columns: 1fr 1fr;
+		      gap: 18px;
+		      align-items: start;
+		    }
+
+		    #part3-carousel .part3-cell {
+		      position: relative;
+		      display: flex;
+		      flex-direction: column;
+		      gap: 10px;
+		    }
+
+		    #part3-carousel .part3-method {
+		      display: inline-flex;
+		      align-items: center;
+		      justify-content: center;
+		      height: 30px;
+		      padding: 0 12px;
+		      border-radius: 999px;
+		      color: #ffffff;
+		      font-weight: 900;
+		      letter-spacing: 0.01em;
+		      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
+		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.10);
+		      width: max-content;
+		    }
+
+		    #part3-carousel .part3-method[data-method="ManipSynth"] {
+		      background: linear-gradient(180deg, #2b6cff 0%, #1f5bd6 100%);
+		      box-shadow: 0 14px 28px rgba(31, 91, 214, 0.22);
+		    }
+
+		    #part3-carousel .part3-method[data-method="ManipTracker"] {
+		      background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+		      box-shadow: 0 14px 28px rgba(5, 150, 105, 0.22);
+		    }
+
+		    #part3-carousel .part3-cell video {
+		      width: 100%;
+		      height: 320px;
+		      object-fit: contain;
+		      border: 1px solid rgba(15, 23, 42, 0.14);
+		      border-radius: 18px;
+		      background: #ffffff;
+		      box-shadow:
+		        0 18px 48px rgba(15, 23, 42, 0.14),
+		        0 2px 0 rgba(255, 255, 255, 0.8) inset;
+		      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+		    }
+
+		    #part3-carousel .publication-banner.video:hover .part3-cell video {
+		      transform: translateY(-2px);
+		      border-color: rgba(15, 23, 42, 0.22);
+		      box-shadow:
+		        0 22px 60px rgba(15, 23, 42, 0.18),
+		        0 2px 0 rgba(255, 255, 255, 0.84) inset;
+		    }
+
+		    @media screen and (max-width: 980px) {
+		      #part3-carousel .part3-duo {
+		        grid-template-columns: 1fr;
+		      }
+		      #part3-carousel .part3-cell video {
+		        height: 260px;
+		      }
+		    }
+		  </style>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC36P9N5PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KC36P9N5PB');
+</script>
+
+
+<body>
+	  <section class="hero">
+	    <div class="hero-body">
+	      <div class="container is-max-desktop">
+	        <div class="columns is-centered">
+	          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title publication-title-with-icon">
+              <img class="publication-title-icon" src="static/images/manipsynth_icon.png" alt="ManipSynth icon">
+              <span class="publication-title-text">Scaling Whole-Body Loco-Manipulation<br>through Compositional Data Synthesis</span>
+            </h1>
+            <div class="is-flex is-justify-content-center" style="margin-top: 1rem;">
+              <a class="button is-dark is-medium" href="./pdf/manipsynth.pdf" target="_blank" rel="noopener noreferrer">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>PDF</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+<!-- Teaser -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p class="teaser-hover-hint">
+              <span class="hint-key">HOVER</span>
+              <span class="hint-text">Move your cursor onto the teaser to preview the ManipSynth trajectory video.</span>
+            </p>
+            <div class="intro-teaser-hover" aria-label="Teaser image that reveals a video on hover">
+              <img class="intro-teaser-image" src="./static/images/page_teaser.png" alt="ManipSynth teaser image"/>
+              <video class="intro-teaser-video" muted loop playsinline preload="metadata">
+                <source src="./static/videos/teaser_video.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+	  </div>
+	</section>
+<!-- End teaser -->
+
+
+<!-- Paper abstract -->
+<section class="hero is-small paper-abstract">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content">
+            <p>
+              Acquiring diverse whole-body dexterous manipulation data for humanoids has long been a fundamental challenge in character animation and robotics. 
+              Existing methods either rely on costly motion capture systems or synthesize motions with poor physical plausibility, hindering the acquisition of high-quality, diverse datasets at scale. 
+            </p>
+            <p>
+              In this work, we present <span class="abs-key">ManipSynth</span>, a unified and morphology-agnostic framework for scalable whole-body loco-manipulation data synthesis. 
+              ManipSynth employs a compositional synthesis strategy: whole-body motion is generated via learning-based sparse whole-body tracking, while hand-object motion and contact transitions are synthesized through contact-aware, rule-based optimization followed by physical refinement.
+              Using the data generated by ManipSynth, we further train <span class="abs-key-ref">ManipTracker</span>, a general-purpose Humanoid-Object Interaction (HOI) tracking controller capable of steering physically simulated humanoids to imitate the reference HOI data. 
+            </p>
+            <p>
+              Experiments demonstrate that <span class="abs-key">ManipSynth</span> achieves approximately <span class="abs-metric">5×</span> higher interaction coverage and <span class="abs-metric">6×</span> lower penetration than OMOMO across a range of representative objects. 
+              Meanwhile, <span class="abs-key-ref">ManipTracker</span> attains around <span class="abs-metric">90%</span> tracking success rate on our synthetic dataset and maintains strong generalization performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Poster -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method Overview</h2>
+          <p class="overview-interactive-hint">
+            <span class="hint-key">LEFT</span>
+            <span class="hint-text">Move your cursor to the left/right half of the figure.</span>
+            <span class="hint-key">RIGHT</span>
+          </p>
+          <div id="method-overview-interactive" class="overview-interactive">
+            <img src="./static/images/page_overview.jpg" alt="Method overview of ManipSynth and ManipTracker"/>
+            <div class="overview-hotspot overview-hotspot-left" aria-hidden="true"></div>
+            <div class="overview-hotspot overview-hotspot-right" aria-hidden="true"></div>
+            <div class="overview-highlight overview-highlight-left" aria-hidden="true"></div>
+            <div class="overview-highlight overview-highlight-right" aria-hidden="true"></div>
+            <div class="overview-tooltip overview-tooltip-left">
+              <strong>ManipSynth:</strong> generates diverse whole-body loco-manipulation motions across different interaction modes.
+            </div>
+            <div class="overview-tooltip overview-tooltip-right">
+              <strong>ManipTracker:</strong> learns an HOI tracking policy in simulation from purely synthetic demonstrations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End poster -->
+
+
+<!-- Part1: Trajectory Refinement -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-2" style="text-align: center;"> Body Motion Synthesis </h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" style="text-align: center;">
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, L_Wrist, R_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_root_rwrist_lwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, R_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_root_rwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [L_Wrist, R_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_lwrist_rwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, L_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_root_lwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_root.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [L_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_lwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--  -->
+        <div class="publication-banner video">
+          <div class="video-caption"> [R_Wrist] Tracking </div>
+          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/part1_rwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+  </div>
+</section>
+
+
+<!-- Part2 ManipSynth -->
+<section id="part2-manipsynth" class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-2" style="text-align: center;"> ManipSynth</h2>
+    <div class="container">
+      <div id="part2-carousel" class="carousel results-carousel" style="text-align: center;">
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Handover">Handover</span>
+		            <span class="video-caption-mode" data-mode="Bimanual">Bimanual 👐</span>
+		            <span class="video-caption-size" data-size="Small" title="Camera">Small Object <i class="fas fa-camera" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_camera_handover.mp4" type="video/mp4">
+		          </video>
+		        </div>
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Handover">Handover</span>
+		            <span class="video-caption-mode" data-mode="Bimanual">Bimanual 👐</span>
+		            <span class="video-caption-size" data-size="Small" title="Binoculars">Small Object <i class="fas fa-binoculars" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_binoculars_handover.mp4" type="video/mp4">
+		          </video>
+		        </div>
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Pick-Place">Pick-Place</span>
+		            <span class="video-caption-mode" data-mode="Single">Single Hand ✋</span>
+		            <span class="video-caption-size" data-size="Large" title="Clothesstand">Large Object <i class="fas fa-tshirt" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_clothesstand_pickplace.mp4" type="video/mp4">
+		          </video>
+		        </div>
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Pick">Pick</span>
+		            <span class="video-caption-mode" data-mode="Bimanual">Bimanual 👐</span>
+		            <span class="video-caption-size" data-size="Large" title="Woodchair">Large Object <i class="fas fa-chair" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_woodchair_pickplace.mp4" type="video/mp4">
+		          </video>
+		        </div>
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Pick">Pick</span>
+		            <span class="video-caption-mode" data-mode="Bimanual">Bimanual 👐</span>
+		            <span class="video-caption-size" data-size="Large" title="Largetable">Large Object <i class="fas fa-table" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_largetable_pickplace.mp4" type="video/mp4">
+		          </video>
+		        </div>
+        <!--  -->
+		        <div class="publication-banner video">
+		          <div class="video-caption">
+		            <span class="video-caption-tag" data-kind="Pick">Pick</span>
+		            <span class="video-caption-mode" data-mode="Single">Single Hand ✋</span>
+		            <span class="video-caption-size" data-size="Small" title="Hammer">Small Object <i class="fas fa-hammer" aria-hidden="true"></i></span>
+		          </div>
+		          <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
+		            <source src="./static/videos/part2_hammer_pickplace.mp4" type="video/mp4">
+		          </video>
+		        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- Part3 ManipSynth + ManipTracker -->
+<section id="part3-manipsynth" class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-2" style="text-align: center;"> ManipSynth / ManipTracker </h2>
+    <div class="container">
+      <div id="part3-carousel" class="carousel results-carousel" style="text-align: center;">
+        <!-- Clothesstand -->
+        <div class="publication-banner video">
+          <div class="video-caption">
+            <span class="video-caption-text">Clothesstand</span>
+            <span class="video-caption-tag" data-kind="Pick-Place">Pick-Place</span>
+          </div>
+          <div class="part3-duo">
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipSynth">ManipSynth</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_clothesstand_manipsynth.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipTracker">ManipTracker</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_clothesstand_maniptracker.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Woodchair -->
+        <div class="publication-banner video">
+          <div class="video-caption">
+            <span class="video-caption-text">Woodchair</span>
+            <span class="video-caption-tag" data-kind="Pick-Place">Pick-Place</span>
+          </div>
+          <div class="part3-duo">
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipSynth">ManipSynth</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_woodchair_manipsynth.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipTracker">ManipTracker</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_woodchair_maniptracker.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Largetable -->
+        <div class="publication-banner video">
+          <div class="video-caption">
+            <span class="video-caption-text">Largetable</span>
+            <span class="video-caption-tag" data-kind="Pick-Place">Pick-Place</span>
+          </div>
+          <div class="part3-duo">
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipSynth">ManipSynth</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_largetable_manipsynth.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="part3-cell">
+              <div class="part3-method" data-method="ManipTracker">ManipTracker</div>
+              <video poster="" autoplay controls muted loop playsinline>
+                <source src="./static/videos/part3_largetable_maniptracker.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="./animate.js" type="module"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const teaser = document.querySelector('.intro-teaser-hover');
+    if (!teaser) return;
+
+    const video = teaser.querySelector('.intro-teaser-video');
+    if (!video) return;
+
+    const playVideo = function () {
+      teaser.classList.add('is-hovered');
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () {});
+      }
+    };
+
+    const pauseVideo = function () {
+      teaser.classList.remove('is-hovered');
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    teaser.addEventListener('mouseenter', playVideo);
+    teaser.addEventListener('mouseleave', pauseVideo);
+  });
+</script>
+
+
+</body>
+</html>

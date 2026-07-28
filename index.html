@@ -960,6 +960,59 @@
 		        height: 260px;
 		      }
 		    }
+
+        #practical-applicability {
+          background: #f3f4f6;
+        }
+
+        #practical-applicability .hero-body {
+          padding-top: 2.5rem;
+          padding-bottom: 2.7rem;
+        }
+
+        #practical-applicability .title.is-2 {
+          margin-bottom: 1.4rem;
+          color: #1d2a3b;
+          font-weight: 850;
+          text-align: center;
+        }
+
+        .practical-video-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px;
+        }
+
+        .practical-video-item {
+          min-width: 0;
+        }
+
+        .practical-video-label {
+          margin-bottom: 10px;
+          color: #334155;
+          font-family: "Google Sans", "Noto Sans", sans-serif;
+          font-size: 1rem;
+          font-weight: 700;
+          text-align: center;
+        }
+
+        .practical-video-item video {
+          display: block;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: contain;
+          border: 1px solid rgba(15, 23, 42, 0.14);
+          border-radius: 8px;
+          background: #000000;
+          box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+        }
+
+        @media screen and (max-width: 768px) {
+          .practical-video-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+        }
 		  </style>
 
 </head>
@@ -1129,6 +1182,52 @@
           <div class="video-caption"> [R_Wrist] Tracking </div>
           <video poster="" id="jumpshot" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/part1_rwrist.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h3 class="title is-3" style="margin-top: 3rem; text-align: center;">G1 body motion synthesis</h3>
+      <div id="g1-body-motion-carousel" class="carousel results-carousel" style="text-align: center;">
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/root.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [L_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/left_wrist_bones_seed_g1_reaching_up_R_003__A054_M.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, L_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/root_left_wrist_bones_seed_g1_reaching_up_R_003__A054_M.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [L_Wrist, R_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/two_wrists_bones_seed_g1_thinking_R_007__A053.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, L_Wrist, R_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/root_two_wrists_bones_seed_g1_looking_around_horizontally_002__A053.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [Root, L_Wrist, R_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/root_two_wrists_bones_seed_g1_salute_005__A053_M.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="publication-banner video">
+          <div class="video-caption"> [R_Wrist] Tracking </div>
+          <video autoplay controls muted loop playsinline preload="metadata" height="100%">
+            <source src="./static/videos/demo/rl-video-step-3-writing-down.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -1325,6 +1424,41 @@
           </div>
           <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/plasticbox_long.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Practical Applicability -->
+<section id="practical-applicability" class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2">Practical Applicability</h2>
+      <div class="practical-video-grid">
+        <div class="practical-video-item">
+          <div class="practical-video-label">Simulation: Tabletop Interaction</div>
+          <video autoplay controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/g1_interaction/web/simulation_table.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="practical-video-item">
+          <div class="practical-video-label">Real World: Large-Object Manipulation</div>
+          <video autoplay controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/g1_interaction/web/real_world_large_object.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="practical-video-item">
+          <div class="practical-video-label">Simulation: Pick-and-Place</div>
+          <video autoplay controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/g1_interaction/web/simulation_pick_place.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="practical-video-item">
+          <div class="practical-video-label">Real World: Tabletop Interaction</div>
+          <video autoplay controls muted loop playsinline preload="metadata">
+            <source src="./static/videos/g1_interaction/web/real_world_tabletop.mp4" type="video/mp4">
           </video>
         </div>
       </div>
